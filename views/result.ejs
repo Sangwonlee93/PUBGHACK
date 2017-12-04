@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<title>PUBG 핵쟁이</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    	<style>
+			body        { background: url('../public/image/bg2.jpg') no-repeat fixed 50% 50%/100% 100%;}
+			#con{
+				padding-top:30%;
+			}
+			h1{
+				color: rgb(255,255,255);
+				text-align: center;
+			}
+      #info{
+        width: 50%;
+        height: 50px;
+        color : rgb(255,255,255);
+        font-size: 15pt;
+        text-align: center;
+      }
+      .fth{
+      	width : 25%;
+      }
+      #result{
+        border: 1px none;
+        font-size: 20pt;
+      }
+    	</style>
+	</head>
+	<body>
+		<div class="container" >
+      <div class = "row">
+        <div class="col-sm-6 col-sm-offset-3">
+  				<div id = "con">
+  						<h1><span class ="glyphicon glyphicon-search"></span> PUGB 핵쟁이 검사</h1>
+  						<hr>
+  				    <form action="/search" method="get" >
+								<select class="form-control" name="region" style="width:100%;">
+									<option value="na">서버 - na</option>
+									<option value="eu">서버 - eu</option>
+									<option value="as">서버 - as</option>
+									<option value="oc">서버 - oc</option>
+									<option value="sa">서버 - sa</option>
+									<option value="sea">서버 - sea</option>
+									<option value="krjp">서버 - krjp</option>
+								</select>
+							<select class="form-control" name="mode" style="width:100%;">
+								<option value="solo">모드 - solo</option>
+								<option value="duo">모드 - duo</option>
+								<option value="squad">모드 - squad</option>
+							</select>
+							<br>
+  				       <div class="input-group">
+      					<input type="text" class="form-control input-lg" placeholder="Search for..." name = "id">
+        					<span class="input-group-btn">
+       					<button class="btn btn-default btn-lg" type="submit">검색</button>
+        					</span>
+      					</div>
+  				    </form>
+  				    <hr>
+              <br>
+  				</div>
+        </div>
+      </div>
+        <div class = "row">
+          <div class ="col-sm-12">
+						<% if(flag == 1){ %>
+							<h1><%= id %>는(은) 조건에 맞는 전적이 없는 유저입니다.</h1>
+						<% }else { %>
+							<h1><%= id %>는(은) 핵쟁이 일 확률 <%= per %>% 입니다</h1>
+	            <br>
+	            <br>
+					</div>
+				</div>
+				<div class="row">
+					<div class ="col-sm-12 col-sm-offset-3">
+	          <table id = "info">
+	            <tr>
+	              <th><img src="../public/image/HEAD.png"> </th>
+	              <th><%= head %></th>
+								<th><img src="../public/image/KDA.png"> </th>
+	              <th><%= kda %></th>
+	            </tr>
+	            <tr>
+	              <th><img src="../public/image/DMG.png"></th>
+	              <th><%= deal %></th>
+								<th><img src="../public/image/KILL.png"> </th>
+	              <th><%= kill %></th>
+	            </tr>
+	          </table>
+						<br>
+          </div>
+        </div>
+				<div class = "row">
+					<div class ="col-sm-12 col-sm-offset-8">
+						<form action="/detail" method="get" >
+							<input type="hidden" name="id" value="<%= id %>">
+							<input type="hidden" name="mode" value="<%= mode %>">
+							<input type="hidden" name="region" value="<%= region %>">
+							<button class="btn btn-default btn-sm" type="submit">상세정보보기</button>
+								</span>
+								<br>
+								<br>
+							</div>
+						</form>
+					</div>
+					<% } %>
+				</div>
+		</div>
+	</body>
+</html>

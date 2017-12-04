@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<title>PUBG 핵쟁이</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    	<style>
+			body        { background: url('../public/image/bg2.jpg') no-repeat fixed 50% 50%/100% 100%;}
+			#con{
+				padding-top:30%;
+			}
+			h1{
+				color: rgb(255,255,255);
+				text-align: center;
+			}
+    	</style>
+	</head>
+	<body>
+		<div class="container" >
+			<div class="col-sm-6 col-sm-offset-3">
+				<div id = "con">
+						<h1><span class ="glyphicon glyphicon-search"></span> PUGB 핵쟁이 검사</h1>
+						<hr>
+				    <form action="/search" method="get" >
+									<select class="form-control" name="region" style="width:100%;">
+										<option value="na">서버 - na</option>
+										<option value="eu">서버 - eu</option>
+										<option value="as">서버 - as</option>
+										<option value="oc">서버 - oc</option>
+										<option value="sa">서버 - sa</option>
+										<option value="sea">서버 - sea</option>
+										<option value="krjp">서버 - krjp</option>
+									</select>
+								<select class="form-control" name="mode" style="width:100%;">
+									<option value="solo">모드 - solo</option>
+									<option value="duo">모드 - duo</option>
+									<option value="squad">모드 - squad</option>
+								</select>
+								<br>
+				       <div class="input-group">
+    						<input type="text" class="form-control input-lg" placeholder="Search for..." name = "id">
+      					<span class="input-group-btn">
+     							<button class="btn btn-default btn-lg" type="submit">검색</button>
+      					</span>
+    					</div>
+				    </form>
+				    <hr>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
