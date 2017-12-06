@@ -99,7 +99,7 @@ check.detaildata = function(id,region,mode,callback){
       'rating' :"", // Rating
       'bestrate' : "", // Best Rating
       'dmg' : "", // Avg Dmg per Match
-      'head' : "", // Headshot Kills Pg
+      'head' : "", //Headshot Kill Ratio
       'heal' : "", // Heals Pg
       'kill' : "", // Kills Pg
       'distance' : "", // Move Distance Pg
@@ -130,7 +130,7 @@ check.detaildata = function(id,region,mode,callback){
         result['bestrate'] = data['stats'][temp]['stats'][i]['displayValue'];
       }else if(data['stats'][temp]['stats'][i]['label']=='Avg Dmg per Match'){
         result['dmg'] = data['stats'][temp]['stats'][i]['displayValue'];
-      }else if(data['stats'][temp]['stats'][i]['label']=='Headshot Kills Pg'){
+      }else if(data['stats'][temp]['stats'][i]['label']=='Headshot Kill Ratio'){
         result['head'] = data['stats'][temp]['stats'][i]['displayValue'];
       }else if(data['stats'][temp]['stats'][i]['label']=='Heals Pg'){
         result['heal'] = data['stats'][temp]['stats'][i]['displayValue'];
