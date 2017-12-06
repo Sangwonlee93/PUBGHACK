@@ -29,6 +29,9 @@
         border: 1px none;
         font-size: 20pt;
       }
+      .user2{
+        color : red;
+      }
     	</style>
 	</head>
 	<body>
@@ -36,6 +39,7 @@
         <div class = "row">
           <div class ="col-sm-12">
 							<h1><%= id %></h1>
+              <h1 class = "user2"><%= id2 %></h1>
 						  <br>
 	            <br>
 					</div>
@@ -46,57 +50,73 @@
 	            <tr>
 	              <th><img src="../public/image/round.png">총 플레이한 라운드</th>
 	              <th><%= result['round'] %></th>
+                <th class = "user2"> <%= result1['round'] %></th>
 								<th><img src="../public/image/chi.png">치킨 뜯은 횟수</th>
 	              <th><%= result['wins'] %></th>
+                <th class = "user2"> <%= result1['wins'] %></th>
                 <th><img src="../public/image/top10.png">TOP 10 에 든 횟수</th>
 	              <th><%= result['top10'] %></th>
+                <th class = "user2"> <%= result1['top10'] %></th>
 	            </tr>
               <tr><th><br></th></tr>
 	            <tr>
                 <th><img src="../public/image/lose.png">패배한 횟수</th>
 	              <th><%= result['lose'] %></th>
+                <th class = "user2"> <%= result1['lose'] %></th>
 								<th><img src="../public/image/rate.png">현재 레이팅</th>
 	              <th><%= result['rating'] %></th>
+                <th class = "user2"> <%= result1['rating'] %></th>
                 <th><img src="../public/image/best.png">최고 레이팅</th>
 	              <th><%= result['bestrate'] %></th>
+                <th class = "user2"> <%= result1['bestrate'] %></th>
 	            </tr>
               <tr><th><br></th></tr>
               <tr>
                 <th><img src="../public/image/deal.png">게임 당 딜량</th>
 	              <th><%= result['dmg'] %></th>
+                <th class = "user2"> <%= result1['dmg'] %></th>
 								<th><img src="../public/image/head1.png">게임 당 헤드샷 비율</th>
 	              <th><%= result['head'] %></th>
+                <th class = "user2"> <%= result1['head'] %></th>
                 <th><img src="../public/image/heal.png">게임당 치료량</th>
-	              <th><%= result['heal'] %></th>
+	              <th ><%= result['heal'] %></th>
+                <th class = "user2"> <%= result1['heal'] %></th>
 	            </tr>
               <tr><th><br></th></tr>
               <tr>
                 <th><img src="../public/image/kill1.png">게임 당 킬량</th>
 	              <th><%= result['kill'] %></th>
+                <th class = "user2"> <%= result1['kill'] %></th>
 								<th><img src="../public/image/distance.png">게임 당 이동거리</th>
 	              <th><%= result['distance'] %></th>
+                <th class = "user2"> <%= result1['distance'] %></th>
                 <th><img src="../public/image/revive.png">게임 당 부활횟수</th>
 	              <th><%= result['revive'] %></th>
+                <th class = "user2"> <%= result1['revive'] %></th>
 	            </tr>
               <tr><th><br></th></tr>
               <tr>
                 <th><img src="../public/image/road.png">게임 당 로드킬 횟수</th>
 	              <th><%= result['road'] %></th>
+                <th class = "user2"> <%= result1['road'] %></th>
 								<th><img src="../public/image/teamkill.png">게임 당 팀킬 횟수</th>
 	              <th><%= result['team'] %></th>
+                <th class = "user2"> <%= result1['team'] %></th>
                 <th><img src="../public/image/time.png">게임 당 생존시간</th>
 	              <th><%= result['survive'] %></th>
+                <th class = "user2"> <%= result1['survive'] %></th>
 	            </tr>
               <tr><th><br></th></tr>
               <tr>
                 <th><img src="../public/image/long.png">가장 멀리서 죽인 거리</th>
 	              <th><%= result['long'] %></th>
+                <th class = "user2"> <%= result1['long'] %></th>
 	            </tr>
 	          </table>
 						<br>
           </div>
         </div>
-				<div class = "row">
+        <div class = "row">
 					<div class ="col-sm-4">
 						<form action="/compare" method="get" >
 							<input type="hidden" name="id" value="<%= id %>">
